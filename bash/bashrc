@@ -7,7 +7,7 @@ export DOT_FILES=$HOME/bin
 
 # Method missing for bash.
 # http://blog.peepcode.com/tutorials/2009/shell-method-missing
-trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/misc/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
+# trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/misc/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
 
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
