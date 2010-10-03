@@ -1,0 +1,76 @@
+# shortcut commands
+
+# git
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gpp='git pull && git push'
+alias gd='git diff | mate'
+alias gc='git commit -v'
+alias ga='git add'
+alias gca='git commit -v -a'
+alias gm='git commit -m'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gco='git checkout'
+alias gr="git reset --soft HEAD^"
+alias gx='gitx'
+alias gpatch='git diff master -p'
+
+function gd() {
+  git diff $* | mate
+}
+
+# Commit pending changes and quote all args as message
+function gg() { 
+    git commit -v -a -m "$*"
+}
+
+
+# Finder
+alias ..="cd .."
+alias ...='cd ../..'
+alias cdd='cd -'        # goto last dir cd'ed from
+alias e='exit'
+alias ff='open -a Firefox'
+alias home='cd ~'
+alias k9="killall -9"
+alias l.='ls -d .*'     # list hidden files
+alias ll='ls -la'
+alias lld='ls -lUd */'  # list directories
+alias lt='ls -lt'       # sort with recently modified first
+alias o='open .'
+alias rm='rm -iv'
+
+# Misc
+alias h='history'
+alias hc='/usr/bin/clear' # clears history. or is 'history -c` which clears terminal but not .bash_history file
+alias grep='grep --color=auto'
+alias m='mate'
+alias pubkey="cat ~/.ssh/*.pub |pbcopy && echo 'Keys copied to clipboard'"
+alias reload='source ~/.bash_profile'
+
+# Processes
+alias tm='top -o csize' # memory
+alias tu='top -o cpu' # cpu
+
+# Ruby
+alias gemi='gem install --no-rdoc --no-ri'
+
+# rails
+alias at='autotest -rails'
+alias aaf='autotest -f' # Don't run all at start
+alias r='rake'
+alias rep='RAILS_ENV=production'
+alias res='RAILS_ENV=staging'
+alias rdm='rake db:migrate db:test:clone'
+alias rdtr='rake db:test:purge && rake db:test:prepare'
+alias rollback='rake db:rollback'
+alias td='tail -f log/development.log'
+alias ttr='touch tmp/restart.txt'
+# rails 2.x
+alias sc='ruby script/console'
+alias sg='ruby script/generate'
+alias sp='ruby script/plugin install'
+alias ss='ruby script/server'
+alias ts='thin start'

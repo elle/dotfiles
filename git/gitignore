@@ -1,0 +1,7 @@
+*.bak
+.DS_Store
+.svn
+log/*
+Thumbs.db
+tmp/*
+tmp/**/*

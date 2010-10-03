@@ -1,0 +1,5 @@
+# contains values used by other scripts and applications
+export PATH=/opt/local/bin:/usr/local/mysql/bin:$PATH
+# export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:$PATH
+
+export EDITOR='mate -w'

@@ -1,0 +1,62 @@
+#!/usr/bin/ruby
+
+# Autocomplete
+require 'irb/completion'
+
+# Print to yaml format with "y"
+require 'yaml'
+
+# ref: http://github.com/ryanb/dotfiles/blob/master/irbrc
+# Prompt behavior
+ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
+
+# History
+require 'irb/ext/save-history'
+IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+
+%w[rubygems looksee/shortcuts wirble hirb].each do |gem|
+  begin
+    require gem
+  rescue LoadError
+    puts "please install #{gem}"
+  end
+end
+
+Hirb.enable
+Wirble.init(:history_size => 10000)
+Wirble.colorize
+
+def history
+  puts Readline::HISTORY.entries[0..-2] * "\n"
+end
+
+def copy(str)
+  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+end
+
+def copy_history
+  history = Readline::HISTORY.entries
+  index = history.rindex("exit") || -1
+  content = history[(index+1)..-2].join("\n")
+  puts content
+  copy content
+end
+
+def paste
+  `pbpaste`
+end
+
+
+# Ref:http://github.com/benaskins/dotfiles/blob/master//irbrc
+# copy a string to the clipboard
+def pbcopy(string)
+  `echo "#{string}" | pbcopy`
+  string
+end
+
+# print SQL to STDOUT
+if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+  require 'logger'
+  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+end
