@@ -1,7 +1,8 @@
 # require "autotest/growl"
 # require "autotest/fsevent"
 # require "autotest/restart"
-require "autotest/redgreen"
+# require "autotest/redgreen"
+require 'autotest/growl'
 require 'autotest/timestamp'
 
 Autotest.add_hook :initialize do |autotest|
@@ -10,7 +11,11 @@ Autotest.add_hook :initialize do |autotest|
   end
 end
 
-Autotest::Growl::clear_terminal = true
+Autotest::Growl::clear_terminal = false
+Autotest::Growl::hide_label = true
+Autotest::Growl::one_notification_per_run = true
+Autotest::Growl::sticky_failure_notifications = true # Make Failure and Error Notifications Sticky
+Autotest::Growl::show_modified_files = false
 
 # Ref: http://wincent.com/knowledge-base/Setting_up_autotest_to_use_Growl
 module Autotest::Growl
