@@ -73,4 +73,11 @@ alias sc='ruby script/console'
 alias sg='ruby script/generate'
 alias sp='ruby script/plugin install'
 alias ss='ruby script/server'
+# rails 3.x
+alias rc='rails console'
+alias rg='rails generate'
+alias rp='rails plugin install'
+alias rs='rails server'
 alias ts='thin start'
+
+alias cwip='cucumber -pwip'
