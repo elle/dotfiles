@@ -29,7 +29,21 @@ function take {
 	cd $1
 }
 
+# Switch passenger ruby
+function pruby() {
+  cmd="sudo ln -sf /etc/apache2/other/passenger-$1.conf /etc/apache2/other/passenger.conf"
+  echo $cmd
+  `cmd`
+  cmd="sudo apachectl restart"
+  echo $cmd
+  `cmd`
+  cmd="rvm use $1"
+  echo $cmd
+  `cmd`
+}
+
 function command_not_found_handler() {
   /usr/bin/env ruby $DOT_FILES/misc/shell_method_missing.rb $*
 }
+
 
