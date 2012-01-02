@@ -4,3 +4,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 export EDITOR='mate -w'
 export CLICOLOR=1;
+
+# When installing node -v0.4.9, go this:
+# Please add /usr/local/lib/node to your NODE_PATH environment variable to have node libraries picked up.
+export NODE_PATH=/usr/local/lib/node$NODE_PATH
