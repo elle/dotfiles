@@ -5,3 +5,5 @@ log/*
 Thumbs.db
 tmp/*
 tmp/**/*
+
+config/initializers/rdebug.rb

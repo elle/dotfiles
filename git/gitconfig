@@ -28,6 +28,7 @@
 [core]
 	editor = mate -w
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/ams/.gitignore
 [alias]
     st = status
     ci = commit
