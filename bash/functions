@@ -32,7 +32,7 @@ function take {
 # Switch passenger ruby
 function pruby() {
   cmd="sudo ln -sf /etc/apache2/other/passenger-$1.conf /etc/apache2/other/passenger.conf"
-  echo $cmd
+  echo cmd
   `cmd`
   cmd="sudo apachectl restart"
   echo $cmd
