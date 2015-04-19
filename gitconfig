@@ -1,0 +1,26 @@
+# This is Git's per-user configuration file.
+[core]
+  editor = vi
+[user]
+  name = Elle Meredith
+  email = ellemeredith@gmail.com
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  unadd = reset HEAD
+  cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[color "diff"]
+  meta = yellow
+[merge]
+  ff = only

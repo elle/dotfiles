@@ -1,41 +1,21 @@
-# shortcut commands
-
 # git
 alias gst='git status'
-alias glog='git log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
+alias lol='git log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
 alias gl='git pull'
 alias gp='git push'
 alias gpp='git pull && git push'
-alias gd='git diff | mate'
+alias gd='git diff'
 alias gc='git commit -m'
-alias gcv='git commit -v'
 alias ga='git add'
-alias gca='git commit -v -a'
 alias gm='git merge --no-ff'
-alias gb='git branch'
-alias gba='git branch -a'
 alias gco='git checkout'
 alias gr="git reset --soft HEAD^"
 alias gx='gitx'
-alias gpatch='git diff master -p'
-
-function gd() {
-  git diff $* | mate
-}
-
-# Commit pending changes and quote all args as message
-function gg() { 
-    git commit -v -a -m "$*"
-}
 
 
 # Finder
 alias ..="cd .."
 alias ...='cd ../..'
-alias cdd='cd -'        # goto last dir cd'ed from
-alias e='exit'
-alias ff='open -a Firefox'
-alias home='cd ~'
 alias k9="killall -9"
 alias l.='ls -d .*'     # list hidden files
 alias ll='ls -la'
@@ -43,14 +23,14 @@ alias lld='ls -lUd */'  # list directories
 alias lt='ls -lt'       # sort with recently modified first
 alias o='open .'
 alias rm='rm -iv'
+alias e='mvim .'
 
 # Misc
 alias h='history'
 alias hc='/usr/bin/clear' # clears history. or is 'history -c` which clears terminal but not .bash_history file
 alias grep='grep --color=auto'
-alias m='mate'
 alias pubkey="cat ~/.ssh/*.pub |pbcopy && echo 'Keys copied to clipboard'"
-alias reload='source ~/.bash_profile'
+alias reload='source ~/.zshrc'
 
 # Processes
 alias tm='top -o csize' # memory
@@ -60,28 +40,40 @@ alias tu='top -o cpu' # cpu
 alias gemi='gem install --no-rdoc --no-ri'
 
 # rails
-alias at='autotest -rails'
-alias aaf='autotest -f' # Don't run all at start
-alias r='rake'
 alias rep='RAILS_ENV=production'
 alias res='RAILS_ENV=staging'
-alias rdm='rake db:migrate && rake db:test:clone'
-alias rdtr='rake db:test:purge && rake db:test:prepare'
+alias rdm='rake db:migrate && rake db:migrate RAILS_ENV=test'
 alias rollback='rake db:rollback'
 alias td='tail -f log/development.log'
 alias ttr='touch tmp/restart.txt'
 alias rlc='rake log:clear'
-alias be='bundle exec'
-# rails 2.x
-alias sc='ruby script/console'
-alias sg='ruby script/generate'
-alias sp='ruby script/plugin install'
-alias ss='ruby script/server'
-# rails 3.x
 alias rc='rails console'
 alias rg='rails generate'
-alias rp='rails plugin install'
-alias rs='rails server --debug'
-alias ts='thin start'
+alias rs='rails server'
 
-alias cwip='cucumber -pwip'
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export EDITOR='mvim'
+
+# chruby specific
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Initialise colours
+autoload -U colors
+colors
+
+# Allow for functions in the prompt.
+setopt PROMPT_SUBST
+
+# Get the name of the branch we are on
+function parse_git_branch(){
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /';
+  #ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  #echo "("${ref#refs/heads/}")"
+}
+
+PS1="%~ \$(parse_git_branch)\$ "
