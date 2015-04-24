@@ -130,7 +130,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>n :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 " Use the os_x_iterm2 runner
@@ -155,6 +155,12 @@ nnoremap <C-l> <C-w>l
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+" Toggle spell checking on and off with `,s`
+nmap <silent> <leader>s :set spell!<CR>
+
+" Set region to British English
+set spelllang=en_gb
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
