@@ -190,6 +190,7 @@ Bundle 'command-t'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-surround'
 
 call vundle#end()
 filetype on
