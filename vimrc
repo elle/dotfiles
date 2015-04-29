@@ -51,7 +51,13 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+  " Source the vimrc file after saving it
+  autocmd bufwritepost .vimrc source $MYVIMRC
 augroup END
+
+" ,v opens the vimrc file in a new tab
+nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " Softtabs, 2 spaces
 set tabstop=2
