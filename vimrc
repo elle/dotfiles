@@ -129,6 +129,9 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Save files with leader-w
+nnoremap <Leader>w :w<CR>
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
