@@ -198,16 +198,12 @@ Bundle 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
 Bundle 'command-t'
-Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-surround'
 
 call vundle#end()
 filetype on
-
-" Remap Ctrl+n to start NERDTree
-map <C-n> :NERDTreeToggle<CR>
 
 " Remap command-t
 nnoremap <C-t> :CommandT<CR>
