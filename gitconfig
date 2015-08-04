@@ -1,6 +1,7 @@
 # This is Git's per-user configuration file.
 [core]
   editor = vi
+  excludesfile = .gitignore_global
 [user]
   name = Elle Meredith
   email = ellemeredith@gmail.com
