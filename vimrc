@@ -86,7 +86,8 @@ if executable('ag')
 endif
 
 " Color scheme
-colorscheme spacegray
+" colorscheme spacegray
+colorscheme base16-twilight
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
