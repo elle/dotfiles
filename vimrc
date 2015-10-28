@@ -204,6 +204,7 @@ Bundle 'command-t'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-commentary'
 
 call vundle#end()
 filetype on
