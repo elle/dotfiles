@@ -95,7 +95,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set textwidth=80
 set colorcolumn=+1
 
-
 " Numbers
 set number
 set numberwidth=5
@@ -115,18 +114,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
-
-" Opening files located in the same directory as the current file
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
@@ -139,20 +126,34 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Bubble multiple lines
+" Hitting F5 will clean out all trailing whitespaces and tabs
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+
+" Bubble single lines, in normal mode cmd + up/down
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines in visual mode, hold ctrl + opn + cmd + up/down
 vmap <C-D-M-Up> xkP`[V`]
 vmap <C-D-M-Down> xp`[V`]
+
+" Hitting D will duplicate whatever is selected directly below
+" Handy when writing tests
+vmap D y'>p
+
+" Opening files located in the same directory as the current file
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>n :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
+
 " Use the os_x_iterm2 runner
 let g:rspec_runner = 'os_x_iterm'
-
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -181,6 +182,9 @@ set spelllang=en_gb
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
+
 " Always use vertical diffs
 set diffopt+=vertical
 
@@ -189,9 +193,6 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-if &compatible
-  set nocompatible
-end
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -212,3 +213,5 @@ filetype on
 
 " Remap command-t
 nnoremap <C-t> :CommandT<CR>
+" commnd-T plugin ignore node_modules/ dir
+set wildignore=node_modules/**
