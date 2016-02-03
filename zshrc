@@ -21,9 +21,7 @@ alias l.='ls -d .*'     # list hidden files
 alias ll='ls -la'
 alias lld='ls -lUd */'  # list directories
 alias lt='ls -lt'       # sort with recently modified first
-alias o='open .'
 alias rm='rm -iv'
-alias e='mvim .'
 
 # Misc
 alias h='history'
@@ -48,7 +46,6 @@ alias td='tail -f log/development.log'
 alias ttr='touch tmp/restart.txt'
 alias rlc='rake log:clear'
 alias rc='rails console'
-alias rg='rails generate'
 alias rs='rails server'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
