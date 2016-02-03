@@ -215,4 +215,4 @@ filetype on
 " Remap command-t
 nnoremap <C-t> :CommandT<CR>
 " commnd-T plugin ignore node_modules/ dir
-set wildignore=node_modules/**
+set wildignore=node_modules/**,tmp/**
