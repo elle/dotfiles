@@ -40,7 +40,7 @@ alias gemi='gem install --no-rdoc --no-ri'
 # rails
 alias rep='RAILS_ENV=production'
 alias res='RAILS_ENV=staging'
-alias rdm='rake db:migrate && rake db:migrate RAILS_ENV=test'
+alias rdm='rake db:migrate && rake db:test:prepare'
 alias rollback='rake db:rollback'
 alias td='tail -f log/development.log'
 alias ttr='touch tmp/restart.txt'
