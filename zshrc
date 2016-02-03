@@ -48,6 +48,8 @@ alias rlc='rake log:clear'
 alias rc='rails console'
 alias rs='rails server'
 
+bindkey '^R' history-incremental-search-backward
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export EDITOR='mvim'
