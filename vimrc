@@ -207,6 +207,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
+Bundle 'slim-template/vim-slim.git'
 
 call vundle#end()
 filetype on
