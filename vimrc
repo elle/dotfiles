@@ -208,6 +208,7 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'slim-template/vim-slim.git'
+Bundle 'cohama/lexima.vim'
 
 call vundle#end()
 filetype on
