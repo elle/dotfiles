@@ -68,6 +68,14 @@ colors
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
 
+# Quicker navigation to sub dirs in most visited dirs
+setopt auto_cd
+cdpath=($HOME/code)
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
+
 # Get the name of the branch we are on
 function parse_git_branch(){
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /';
