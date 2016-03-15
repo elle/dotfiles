@@ -209,9 +209,16 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'cohama/lexima.vim'
+Bundle 'christoomey/vim-titlecase'
 
 call vundle#end()
 filetype on
+
+" a new operator to titlecase text
+let g:titlecase_map_keys = 0
+nmap <leader>gt <Plug>Titlecase
+vmap <leader>gt <Plug>Titlecase
+nmap <leader>gT <Plug>TitlecaseLine
 
 " Remap command-t
 nnoremap <C-t> :CommandT<CR>
