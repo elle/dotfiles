@@ -224,3 +224,5 @@ nmap <leader>gT <Plug>TitlecaseLine
 nnoremap <C-t> :CommandT<CR>
 " commnd-T plugin ignore node_modules/ dir
 set wildignore=node_modules/**,tmp/**
+
+set exrc
