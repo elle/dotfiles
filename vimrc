@@ -210,6 +210,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'cohama/lexima.vim'
 Bundle 'christoomey/vim-titlecase'
+Bundle 'urso/haskell_syntax.vim'
 
 call vundle#end()
 filetype on
