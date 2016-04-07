@@ -203,7 +203,7 @@ call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
-Bundle 'command-t'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-surround'
@@ -222,9 +222,8 @@ nmap <leader>gt <Plug>Titlecase
 vmap <leader>gt <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 
-" Remap command-t
-nnoremap <C-t> :CommandT<CR>
-" commnd-T plugin ignore node_modules/ dir
-set wildignore=node_modules/**,tmp/**
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+set wildignore+=*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip
 
 set exrc
