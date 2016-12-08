@@ -13,4 +13,10 @@ task :install do
     puts "linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
+
+  if `which nvim > /dev/null`
+    # Use existing Vim confirguation with NeoVim
+    system "ln -s ~/.vim ~/.config/nvim"
+    system "ln -s ~/.vimrc ~/.config/nvim/init.vim"
+  end
 end
