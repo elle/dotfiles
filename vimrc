@@ -86,8 +86,8 @@ if executable('ag')
 endif
 
 " Color scheme
-" colorscheme spacegray
-colorscheme base16-twilight
+set background=dark " for the dark version
+colorscheme one
 highlight NonText ctermbg=0 cterm=NONE gui=NONE
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -205,7 +205,7 @@ Bundle 'gmarik/Vundle.vim'
 " Define bundles via Github repos
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'thoughtbot/vim-rspec'
+Bundle 'janko-m/vim-test'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'slim-template/vim-slim.git'
@@ -225,5 +225,12 @@ nmap <leader>gT <Plug>TitlecaseLine
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 set wildignore+=*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip
+
+" vim-test mappings
+nnoremap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>s :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <leader>gt :TestVisit<CR>
 
 set exrc
