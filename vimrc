@@ -2,6 +2,8 @@
 " possible, as it has side effects.
 set nocompatible
 
+set shell=$SHELL\ -l
+
 " Leader
 let mapleader = ","
 

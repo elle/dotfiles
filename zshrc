@@ -55,8 +55,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export EDITOR='mvim'
 
 # chruby specific
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -77,10 +77,8 @@ autoload -Uz compinit
 compinit
 
 # Get the name of the branch we are on
-function parse_git_branch(){
+function parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /';
-  #ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  #echo "("${ref#refs/heads/}")"
 }
 
 PS1="%~ \$(parse_git_branch)\$ "
