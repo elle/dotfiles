@@ -147,12 +147,6 @@ map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>n :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
-
 " Use the os_x_iterm2 runner
 let g:rspec_runner = 'os_x_iterm'
 
@@ -227,10 +221,10 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 set wildignore+=*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip
 
 " vim-test mappings
-nnoremap <silent> <Leader>t :TestFile<CR>
-nnoremap <silent> <Leader>s :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
-nnoremap <silent> <leader>gt :TestVisit<CR>
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>gt :TestVisit<CR>
 
 set exrc
