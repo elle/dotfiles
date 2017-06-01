@@ -208,6 +208,7 @@ Bundle 'slim-template/vim-slim.git'
 Bundle 'cohama/lexima.vim'
 Bundle 'christoomey/vim-titlecase'
 Bundle 'urso/haskell_syntax.vim'
+Bundle 'elixir-lang/vim-elixir'
 
 call vundle#end()
 filetype on
