@@ -209,6 +209,7 @@ Bundle 'cohama/lexima.vim'
 Bundle 'christoomey/vim-titlecase'
 Bundle 'urso/haskell_syntax.vim'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'chrisbra/Colorizer'
 
 call vundle#end()
 filetype on
@@ -229,5 +230,9 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>gt :TestVisit<CR>
+
+" turn colorizer on for specific file types, but not in comments
+let g:colorizer_auto_filetype='css,html'
+let g:colorizer_skip_comments = 1
 
 set exrc
