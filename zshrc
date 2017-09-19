@@ -13,7 +13,6 @@ alias gco="git checkout"
 alias gr="git reset --soft HEAD^"
 alias gx="gitx"
 
-
 # Finder
 alias ..="cd .."
 alias ...="cd ../.."
@@ -27,6 +26,7 @@ alias hc="/usr/bin/clear" # clears history. or is "history -c` which clears term
 alias grep="grep --color=auto"
 alias pubkey="cat ~/.ssh/*.pub |pbcopy && echo 'Keys copied to clipboard'"
 alias reload="source ~/.zshrc"
+alias md="macdown"
 
 # Processes
 alias tm="top -o csize" # memory
