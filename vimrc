@@ -94,6 +94,8 @@ colorscheme one
 highlight NonText ctermbg=0 cterm=NONE gui=NONE
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
+set guifont=Inconsolata:h14.00 "best font ever
+
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
