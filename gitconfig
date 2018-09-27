@@ -53,3 +53,5 @@
   ff = only
 [fetch]
   prune = true
+[rebase]
+  autosquash = true
