@@ -225,7 +225,7 @@ nmap <leader>gT <Plug>TitlecaseLine
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden --ignore-dir .git -g "" %s'
-set wildignore+=*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.obj,.git,bower_components/**,**/node_modules/**,_build/**,deps/**
 
 " vim-test mappings
 nmap <silent> <leader>t :TestNearest<CR>
