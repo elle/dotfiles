@@ -234,6 +234,9 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>gt :TestVisit<CR>
 
+"run mix tests right from vim
+map <leader><space> :!mix test<CR>
+
 " turn colorizer on for specific file types, but not in comments
 let g:colorizer_auto_filetype='css,html'
 let g:colorizer_skip_comments = 1
