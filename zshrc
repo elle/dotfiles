@@ -70,6 +70,11 @@ setopt PROMPT_SUBST
 setopt auto_cd
 cdpath=($HOME/code)
 
+# Make Homebrew’s completions available
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
