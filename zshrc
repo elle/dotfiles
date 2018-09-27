@@ -85,3 +85,6 @@ function parse_git_branch() {
 }
 
 PS1="%~ \$(parse_git_branch)\$ "
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/ems/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
