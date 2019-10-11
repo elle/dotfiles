@@ -214,6 +214,7 @@ Bundle 'christoomey/vim-titlecase'
 Bundle 'urso/haskell_syntax.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'chrisbra/Colorizer'
+Bundle 'slashmili/alchemist.vim'
 
 call vundle#end()
 filetype on
