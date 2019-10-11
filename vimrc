@@ -19,6 +19,7 @@ set ignorecase    " searches are case insensitive...
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set hlsearch
+"set noballooneval " Hide code evaluation tooltips
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
