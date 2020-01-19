@@ -27,6 +27,7 @@ alias grep="grep --color=auto"
 alias pubkey="cat ~/.ssh/*.pub |pbcopy && echo 'Keys copied to clipboard'"
 alias reload="source ~/.zshrc"
 alias md="macdown"
+alias tree="tree -C"
 
 # Processes
 alias tm="top -o csize" # memory
