@@ -49,7 +49,7 @@ alias rs="rails server"
 
 bindkey "^R" history-incremental-search-backward
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 export EDITOR="mvim"
 
