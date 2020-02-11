@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [core]
-	editor = /usr/bin/vim
-  excludesfile = .gitignore_global
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
 [user]
   name = Elle Meredith
   email = ellemeredith@gmail.com
@@ -56,4 +56,4 @@
 [rebase]
   autosquash = true
 [diff]
-	noprefix = true
+  noprefix = true
