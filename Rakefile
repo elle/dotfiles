@@ -3,7 +3,7 @@ require "rake"
 desc "install dotfiles into user's home dir"
 task :install do
   Dir['*'].each do |file|
-    next if %w[Rakefile readme.md].include? file
+    next if %w[Rakefile readme.md setup].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       puts "backing up '.#{file}' -> '#{file}_bkp'"
