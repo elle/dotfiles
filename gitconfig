@@ -52,11 +52,15 @@
   frag = magenta bold
   old = red bold
   new = green bold
-[merge]
-  ff = only
-[fetch]
-  prune = true
-[rebase]
-  autosquash = true
+[commit]
+  verbose = true
 [diff]
   noprefix = true
+[fetch]
+  prune = true
+[merge]
+  ff = only
+[push]
+  default = simple
+[rebase]
+  autosquash = true
