@@ -32,3 +32,5 @@ chflags nohidden ~/Library/
 
 killall Dock
 killall SystemUIServer
+
+./adblock
