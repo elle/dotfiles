@@ -203,18 +203,19 @@ call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'janko-m/vim-test'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'cohama/lexima.vim'
-Bundle 'christoomey/vim-titlecase'
-Bundle 'urso/haskell_syntax.vim'
-Bundle 'elixir-lang/vim-elixir'
 Bundle 'chrisbra/Colorizer'
+Bundle 'christoomey/vim-titlecase'
+Bundle 'cohama/lexima.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'janko-m/vim-test'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'preservim/nerdtree'
 Bundle 'slashmili/alchemist.vim'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-surround'
+Bundle 'urso/haskell_syntax.vim'
 
 call vundle#end()
 filetype on
@@ -243,4 +244,6 @@ map <leader><space> :!mix test<CR>
 let g:colorizer_auto_filetype='css,html'
 let g:colorizer_skip_comments = 1
 
+" Ctrl+n to to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
 set exrc
