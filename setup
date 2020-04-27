@@ -1,35 +1,34 @@
 #!/usr/bin/env sh
 
-# Install homebrew
+# Homebrew itself depends on the command line tools (CLT) for Xcode
+xcode-select --install
 
+# Install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Symlink all the things
-
 rake install
 
-# Install command line tools and apps
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "Open vi and run `:BundleInstall`"
 
-brew install
+# Install command line tools and apps
+brew bundle --verbose
 
 # Tweak the Dock
-
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock orientation left
 defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-tr-corner -int 4
 
 # Tweak iTerm
-
 defaults write com.googlecode.iterm2 ShowPaneTitles -int 0
 defaults write com.googlecode.iterm2 SplitPaneDimmingAmount -int 0.1
 
 # Show the ~/Library folder
-
 chflags nohidden ~/Library/
 
 # Restart the Dock and the UI server
-
 killall Dock
 killall SystemUIServer
 
