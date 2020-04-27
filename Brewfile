@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 brew "ack"
 brew "aws-elasticbeanstalk"
 brew "awscli"
+brew "chrome-cli"
 brew "cmake"
 brew "cowsay"
 brew "docker-machine", restart_service: :changed
@@ -28,10 +29,8 @@ brew "node"
 brew "oniguruma"
 brew "openssl@1.1"
 brew "pcre2"
-brew "phantomjs"
 brew "postgis"
 brew "postgresql", restart_service: :changed
-brew "qt@5.5"
 brew "readline"
 brew "redis", restart_service: :changed
 brew "ruby-install"
@@ -47,17 +46,19 @@ brew "z"
 cask "agenda"
 cask "anvil"
 cask "appcleaner"
+cask "chromium"
+cask "dash"
 cask "data-rescue"
 cask "deckset"
 cask "dropbox"
 cask "gifrocket"
 cask "insomnia"
 cask "iterm2"
-cask "java8"
 cask "kap"
 cask "keepassx"
 cask "keepingyouawake"
 cask "licecap"
+cask "little-snitch"
 cask "macdown"
 cask "monodraw"
 cask "namechanger"
@@ -65,6 +66,7 @@ cask "ngrok"
 cask "nordvpn"
 cask "notion"
 cask "numi"
+cask "phantomjs"
 cask "postico"
 cask "querious"
 cask "rightfont"
@@ -73,6 +75,7 @@ cask "shiftit"
 cask "signal"
 cask "sketch"
 cask "skype"
+cask "slack"
 cask "spotify"
 cask "superduper"
 cask "teamviewer"
@@ -85,8 +88,6 @@ cask "wkhtmltopdf"
 cask "zeplin"
 
 mas "1Password 7", id: 1333542190
-mas "AdBlock", id: 1402042596
-mas "Adblock Plus", id: 1432731683
 mas "Annotate", id: 918207447 
 mas "AntiRSI", id: 442007571 
 mas "Byword", id: 420212497 
@@ -107,10 +108,8 @@ mas "Paper", id: 1143513744
 mas "Patterns",id: 429449079 
 mas "Scapple", id: 568020055 
 mas "Simplenote", id: 692867256 
-mas "Slack", id: 803453959 
 mas "SnippetsLab", id: 1006087419
 mas "Todoist", id: 585829637 
-mas "Tomato One" id: 907364780
+mas "Tomato One", id: 907364780
 mas "Tweetbot", id: 557168941 
-mas "Writed", id: 973510001 
 mas "Xcode", id: 497799835 
