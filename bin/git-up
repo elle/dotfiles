@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+branch="master"
+
+if git branch | grep -Fq "main"; then
+  branch="main"
+fi
+
+git fetch origin
+git rebase origin/$branch "$@"
