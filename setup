@@ -3,6 +3,9 @@
 # Homebrew itself depends on the command line tools (CLT) for Xcode
 xcode-select --install
 
+# Remove All Unavailable Simulators
+xcrun simctl delete unavailable
+
 # Install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -15,18 +18,44 @@ echo "Open vi and run `:BundleInstall`"
 # Install command line tools and apps
 brew bundle --verbose
 
-# Tweak the Dock
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock orientation left
-defaults write com.apple.dock wvous-br-corner -int 5
-defaults write com.apple.dock wvous-tr-corner -int 4
+# Show external media
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+
+# Show All File Extensions
+defaults write -g AppleShowAllExtensions -bool true
+
+# Show status Bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Sets default save target to be a local disk, not iCloud
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Enable Develop Menu and Web Inspector
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write -g WebKitDeveloperExtras -bool true
 
 # Tweak iTerm
 defaults write com.googlecode.iterm2 ShowPaneTitles -int 0
 defaults write com.googlecode.iterm2 SplitPaneDimmingAmount -int 0.1
 
+# Use Plain Text Mode as Default
+defaults write com.apple.TextEdit RichText -int 0
+
 # Show the ~/Library folder
 chflags nohidden ~/Library/
+
+# Tweak the Dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock orientation left
+defaults write com.apple.dock wvous-br-corner -int 5
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.Dock size-immutable -bool yes
+defaults write com.apple.dock tilesize -int 0
+
+# Calendar: turn on time zones support
 
 # Restart the Dock and the UI server
 killall Dock
