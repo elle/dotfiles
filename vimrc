@@ -189,6 +189,16 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt=vertical
 
+" Specify eslint as a fixer for JavaScript
+let g:ale_fixers = {"javascript": ["eslint"]}
+" Fix files automatically on save
+let g:ale_fix_on_save = 1
+
+" Navigate between errors and warnings.
+" You can map the keys Ctrl+j and Ctrl+k to moving between errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
@@ -207,6 +217,7 @@ Bundle 'chrisbra/Colorizer'
 Bundle 'christoomey/vim-titlecase'
 Bundle 'cohama/lexima.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'dense-analysis/ale'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'janko-m/vim-test'
 Bundle 'kchmck/vim-coffee-script'
