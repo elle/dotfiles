@@ -64,3 +64,5 @@
   default = simple
 [rebase]
   autosquash = true
+[pull]
+  rebase = false
