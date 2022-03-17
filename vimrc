@@ -90,8 +90,8 @@ if executable('ag')
 endif
 
 " Color scheme
-set background=dark " for the dark version
-colorscheme one
+" set background=dark " for the one dark version
+colorscheme dracula
 highlight NonText ctermbg=0 cterm=NONE gui=NONE
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
