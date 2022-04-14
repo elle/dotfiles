@@ -27,12 +27,14 @@
   ls = ls-files
   cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
 
-  # # Assume a file as unchanged:
+  # Assume a file as unchanged:
   assume = update-index --assume-unchanged
   # Unassume a file:
   unassume = update-index --no-assume-unchanged
   # Show assumed files:
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+  # force push with lease
+  pushf = push --force-with-lease
 
 [color]
   diff = auto
