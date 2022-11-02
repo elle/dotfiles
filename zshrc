@@ -55,8 +55,8 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export EDITOR="mvim"
 
 # chruby specific
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -91,4 +91,4 @@ PS1="%~ \$(parse_git_branch)\$ "
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/ems/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
-. /usr/local/etc/profile.d/z.sh
+. /opt/homebrew/etc/profile.d/z.sh
