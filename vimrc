@@ -232,6 +232,8 @@ Bundle 'urso/haskell_syntax.vim'
 call vundle#end()
 filetype on
 
+let g:ale_linters = {'ruby': ['standardrb']}
+
 " a new operator to titlecase text
 let g:titlecase_map_keys = 0
 nmap <leader>gt <Plug>Titlecase
