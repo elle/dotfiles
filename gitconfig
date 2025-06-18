@@ -10,6 +10,12 @@
   ci = commit
   br = branch
   co = checkout
+  # `git log` with patches shown with difftastic.
+  # dl = -c diff.external=difft log --ext-diff
+  # Show most recent commit with difft
+  # ds = -c diff.external=difft show --ext-diff
+  # git diff` with difftastic
+  # dft = -c diff.external=difft diff
 
   # diff
   d = diff
