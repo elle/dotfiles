@@ -1,10 +1,10 @@
 # This is Git's per-user configuration file.
 [core]
   editor = /usr/bin/vim
-  excludesfile = ~/.gitignore_global
+  excludesfile = /Users/elle/.gitignore_global
 [user]
   name = Elle Meredith
-  email = ellemeredith@gmail.com
+  email = elle@aemeredith.com
 [alias]
   st = status
   ci = commit
