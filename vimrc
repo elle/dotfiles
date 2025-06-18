@@ -225,6 +225,7 @@ Bundle 'preservim/nerdtree'
 Bundle 'slashmili/alchemist.vim'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'urso/haskell_syntax.vim'
 
